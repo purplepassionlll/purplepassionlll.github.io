@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java 性能调优需要格外注意的细节 | Zhisheng的博客</title>
+  <title>Java 性能调优需要格外注意的细节 | LLL的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="昨天写了篇文章 《MySQL 处理海量数据时的一些优化查询速度方法》 ，其实开发中不止数据库要优化，还有我们本身的开发代码也需要优化，这样我们开发的产品才能够得到极致的体验。也许有些人认为这些细小的地方没有啥好修改的，改与不改对运行效率没啥大的影响？首先在我们本地一个人测试下效率是不怎么明显，但是如果到发布上线后，你的用户有几百万，甚至上千万，这些用户同时访问你的网站，那么你的网站是否经得住考验呢">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 性能调优需要格外注意的细节">
 <meta property="og:url" content="http://yoursite.com/2017/04/30/Java-performance-tuning/index.html">
-<meta property="og:site_name" content="Zhisheng的博客">
+<meta property="og:site_name" content="LLL的博客">
 <meta property="og:description" content="昨天写了篇文章 《MySQL 处理海量数据时的一些优化查询速度方法》 ，其实开发中不止数据库要优化，还有我们本身的开发代码也需要优化，这样我们开发的产品才能够得到极致的体验。也许有些人认为这些细小的地方没有啥好修改的，改与不改对运行效率没啥大的影响？首先在我们本地一个人测试下效率是不怎么明显，但是如果到发布上线后，你的用户有几百万，甚至上千万，这些用户同时访问你的网站，那么你的网站是否经得住考验呢">
 <meta property="og:updated_time" content="2017-04-30T05:50:51.245Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 性能调优需要格外注意的细节">
 <meta name="twitter:description" content="昨天写了篇文章 《MySQL 处理海量数据时的一些优化查询速度方法》 ，其实开发中不止数据库要优化，还有我们本身的开发代码也需要优化，这样我们开发的产品才能够得到极致的体验。也许有些人认为这些细小的地方没有啥好修改的，改与不改对运行效率没啥大的影响？首先在我们本地一个人测试下效率是不怎么明显，但是如果到发布上线后，你的用户有几百万，甚至上千万，这些用户同时访问你的网站，那么你的网站是否经得住考验呢">
   
-    <link rel="alternative" href="/atom.xml" title="Zhisheng的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="LLL的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -49,7 +49,7 @@
 			<img src="/img/avatar.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Zhisheng Tian</a></h1>
+		  <h1 class="header-author"><a href="/">LLL</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">永远不要跟别人比幸运，我从来没想过我比别人幸运，我也许比他们更有毅力，在最困难的时候，他们熬不住了，我可以多熬一秒钟、两秒钟。</p>
@@ -80,21 +80,7 @@
             
 		</nav>
 		<nav class="header-nav">
-			<div class="social">
-				
-					<a class="github" target="_blank" href="https://github.com/zhisheng17/" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/tian-zhisheng/activities" title="zhihu"><i class="icon-zhihu"></i></a>
-		        
-					<a class="qq" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=12fd21bdd550f4b14f76ed5f00305b22e57fbd08aa55a18d472570280754a179" title="qq"><i class="icon-qq"></i></a>
-		        
-					<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/419f65c24433" title="jianshu"><i class="icon-jianshu"></i></a>
-		        
-					<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/yuanblog" title="segmentfault"><i class="icon-segmentfault"></i></a>
-		        
-					<a class="mail" target="_blank" href="mailto://zhisheng2018@gmail.com" title="mail"><i class="icon-mail"></i></a>
-		        
-			</div>
+			
 		</nav>
 	</header>		
 </div>
@@ -113,7 +99,7 @@
 				<img src="/img/avatar.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Zhisheng Tian</h1>
+			  <h1 class="header-author js-header-author">LLL</h1>
 			</hgroup>
 			
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>永远不要跟别人比幸运，我从来没想过我比别人幸运，我也许比他们更有毅力，在最困难的时候，他们熬不住了，我可以多熬一秒钟、两秒钟。<i class="icon icon-quo-right"></i></p>
@@ -127,21 +113,7 @@
 			
 			
 			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/zhisheng17/" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/tian-zhisheng/activities" title="zhihu"><i class="icon-zhihu"></i></a>
-			        
-						<a class="qq" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=12fd21bdd550f4b14f76ed5f00305b22e57fbd08aa55a18d472570280754a179" title="qq"><i class="icon-qq"></i></a>
-			        
-						<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/419f65c24433" title="jianshu"><i class="icon-jianshu"></i></a>
-			        
-						<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/yuanblog" title="segmentfault"><i class="icon-segmentfault"></i></a>
-			        
-						<a class="mail" target="_blank" href="mailto://zhisheng2018@gmail.com" title="mail"><i class="icon-mail"></i></a>
-			        
-				</div>
+				
 			</nav>
 
 			<nav class="header-menu js-header-menu">
@@ -500,7 +472,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Zhisheng Tian
+    		&copy; 2017 LLL
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
