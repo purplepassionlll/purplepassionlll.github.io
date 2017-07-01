@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>MySQL 处理海量数据时的一些优化查询速度方法 | Zhisheng的博客</title>
+  <title>MySQL 处理海量数据时的一些优化查询速度方法 | LLL的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在参与实际项目中，当 MySQL 表的数据量达到百万级时，普通的 SQL 查询效率呈直线下降，而且如果 where 中的查询条件较多时，其查询速度无法容忍。想想可知，假如我们查询淘宝的一个订单详情，如果查询时间高达几十秒，这么高的查询延时，任何用户都会抓狂。因此如何提高 SQL 语句查询效率，显得十分重要。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL 处理海量数据时的一些优化查询速度方法">
 <meta property="og:url" content="http://yoursite.com/2017/04/29/MySQL-select-good/index.html">
-<meta property="og:site_name" content="Zhisheng的博客">
+<meta property="og:site_name" content="LLL的博客">
 <meta property="og:description" content="在参与实际项目中，当 MySQL 表的数据量达到百万级时，普通的 SQL 查询效率呈直线下降，而且如果 where 中的查询条件较多时，其查询速度无法容忍。想想可知，假如我们查询淘宝的一个订单详情，如果查询时间高达几十秒，这么高的查询延时，任何用户都会抓狂。因此如何提高 SQL 语句查询效率，显得十分重要。">
 <meta property="og:updated_time" content="2017-04-29T14:25:22.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 处理海量数据时的一些优化查询速度方法">
 <meta name="twitter:description" content="在参与实际项目中，当 MySQL 表的数据量达到百万级时，普通的 SQL 查询效率呈直线下降，而且如果 where 中的查询条件较多时，其查询速度无法容忍。想想可知，假如我们查询淘宝的一个订单详情，如果查询时间高达几十秒，这么高的查询延时，任何用户都会抓狂。因此如何提高 SQL 语句查询效率，显得十分重要。">
   
-    <link rel="alternative" href="/atom.xml" title="Zhisheng的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="LLL的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -49,7 +49,7 @@
 			<img src="/img/avatar.png" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Zhisheng Tian</a></h1>
+		  <h1 class="header-author"><a href="/">LLL</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">永远不要跟别人比幸运，我从来没想过我比别人幸运，我也许比他们更有毅力，在最困难的时候，他们熬不住了，我可以多熬一秒钟、两秒钟。</p>
@@ -80,21 +80,7 @@
             
 		</nav>
 		<nav class="header-nav">
-			<div class="social">
-				
-					<a class="github" target="_blank" href="https://github.com/zhisheng17/" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/tian-zhisheng/activities" title="zhihu"><i class="icon-zhihu"></i></a>
-		        
-					<a class="qq" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=12fd21bdd550f4b14f76ed5f00305b22e57fbd08aa55a18d472570280754a179" title="qq"><i class="icon-qq"></i></a>
-		        
-					<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/419f65c24433" title="jianshu"><i class="icon-jianshu"></i></a>
-		        
-					<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/yuanblog" title="segmentfault"><i class="icon-segmentfault"></i></a>
-		        
-					<a class="mail" target="_blank" href="mailto://zhisheng2018@gmail.com" title="mail"><i class="icon-mail"></i></a>
-		        
-			</div>
+			
 		</nav>
 	</header>		
 </div>
@@ -113,7 +99,7 @@
 				<img src="/img/avatar.png" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Zhisheng Tian</h1>
+			  <h1 class="header-author js-header-author">LLL</h1>
 			</hgroup>
 			
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>永远不要跟别人比幸运，我从来没想过我比别人幸运，我也许比他们更有毅力，在最困难的时候，他们熬不住了，我可以多熬一秒钟、两秒钟。<i class="icon icon-quo-right"></i></p>
@@ -127,21 +113,7 @@
 			
 			
 			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/zhisheng17/" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/tian-zhisheng/activities" title="zhihu"><i class="icon-zhihu"></i></a>
-			        
-						<a class="qq" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=12fd21bdd550f4b14f76ed5f00305b22e57fbd08aa55a18d472570280754a179" title="qq"><i class="icon-qq"></i></a>
-			        
-						<a class="jianshu" target="_blank" href="http://www.jianshu.com/u/419f65c24433" title="jianshu"><i class="icon-jianshu"></i></a>
-			        
-						<a class="segmentfault" target="_blank" href="https://segmentfault.com/u/yuanblog" title="segmentfault"><i class="icon-segmentfault"></i></a>
-			        
-						<a class="mail" target="_blank" href="mailto://zhisheng2018@gmail.com" title="mail"><i class="icon-mail"></i></a>
-			        
-				</div>
+				
 			</nav>
 
 			<nav class="header-menu js-header-menu">
@@ -423,7 +395,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Zhisheng Tian
+    		&copy; 2017 LLL
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
